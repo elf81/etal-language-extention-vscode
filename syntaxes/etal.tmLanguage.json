@@ -16,6 +16,12 @@
     },
     {
       "include": "#constants"
+    },
+    {
+      "include": "#icrfunctions"
+    },
+    {
+      "include": "#storage"
     }
   ],
   "repository": {
@@ -23,7 +29,11 @@
       "patterns": [
         {
           "name": "keyword.control.etal",
-          "match": "\\b(if|while|for|return)\\b"
+          "match": "\\b(if|while|for|return|break)\\b"
+        },
+        {
+          "name": "keyword.other.etal",
+          "match": "\\b(print)\\b"
         }
       ]
     },
@@ -42,10 +52,10 @@
       "begin": "\\(",
       "end": "\\)",
       "beginCaptures": {
-        "0": { "name": "punctuation.paren.open" }
+        "0": { "name": "punctuation.paren.open.etal" }
       },
       "endCaptures": {
-        "0": { "name": "punctuation.paren.close" }
+        "0": { "name": "punctuation.paren.close.etal" }
       },
       "name": "expression.group",
       "patterns": [{ "include": "#expression" }]
@@ -58,7 +68,7 @@
           "end": "\n"
         },
         {
-          "name": "comment.block",
+          "name": "comment.block.etal",
           "begin": "/\\*",
           "end": "\\*/"
         }
@@ -69,6 +79,26 @@
         {
           "name": "constant.language",
           "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "icrfunctions": {
+      "patterns": [
+        {
+          "name": "support.function",
+          "match": "\\b(ICR_CreateFont|ICR_SetLocalUserData|ICR_Window_Enable|ICR_GetLocalUserData|ICR_MessageBox|ICR_SetFeature|ICR_GetSystemData)\\b"
+        }
+      ]
+    },
+    "storage": {
+      "patterns": [
+        {
+          "name": "storage.type.etal",
+          "match": "\\b(function)\\b"
+        },
+        {
+          "name": "variable.etal",
+          "match": "\\b(local)\\b"
         }
       ]
     }
