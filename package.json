@@ -1,0 +1,25 @@
+{
+    "name": "Etal-Lang",
+    "displayName": "Etal-ICRTouch",
+    "description": "Syntax highlighting for Etal",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "etal",
+            "aliases": ["Etal", "etal"],
+            "extensions": [".moc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "etal",
+            "scopeName": "source.moc",
+            "path": "./syntaxes/etal.tmLanguage.json"
+        }]
+    }
+}
