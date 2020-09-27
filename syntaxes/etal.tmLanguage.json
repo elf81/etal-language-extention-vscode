@@ -22,9 +22,6 @@
 	  },
 	  {
 		"include": "#storage"
-	  },
-	  {
-		"include": "#events"
 	  }
 	],
 	"repository": {
@@ -32,11 +29,15 @@
 		"patterns": [
 		  {
 			"name": "keyword.control.etal",
-			"match": "\\b(if|while|for|return|break)\\b"
+			"match": "\\b(if|while|for|foreach|return|break)\\b"
 		  },
 		  {
 			"name": "keyword.other.etal",
 			"match": "\\b(print)\\b"
+		  },
+		  {
+			"name": "keyword.events.etal",
+			"match": "\\b(OnInit|BeforeKeyPress|AfterKeyPress|OnRunScriptKeyPress|OnIButtonPressed|OnCardSwipe|AfterModeChange|OnEnterPGMMenu|OnEnterPGMOptionList|OnWindowPaint|OnTimer|OnMouseEvent|BeforePrint|AfterSignOn|OnAwaitFile|OnBarcode|AfterFinalise|OnReceiptRequired|OnEmailOutResult|AfterCustomerLogOn|OnKPDeviceRequested|OnCustomerExpired|AfterRegItemSelect|OnFTPResult|AfterFullSalesDataReset|ReportEvent|OnFile_ReadPipeResult|OnMixMatch|OnWebPostResult|BeforeFinalise|PreSaleFinalised|OnSMSOutResult|AfterExtCustomerLogOn|OnRemoteMessageReceived|InsertAdditionalOrderInfo)\\b"
 		  }
 		]
 	  },
@@ -104,15 +105,8 @@
 			"match": "\\b(local)\\b"
 		  }
 		]
-	  },
-	  "events": {
-		"patterns": [
-		  {
-			"name": "events.type.etal",
-			"match": "\\b(AfterFinalise|OnReceiptRequired|OnEmailOutResult|AfterCustomerLogOn|OnKPDeviceRequested|OnCustomerExpired|AfterRegItemSelect|OnFTPResult|AfterFullSalesDataReset|ReportEvent|OnFile_ReadPipeResult|OnMixMatch|OnWebPostResult|BeforeFinalise|PreSaleFinalised|OnSMSOutResult|AfterExtCustomerLogOn|OnRemoteMessageReceived|InsertAdditionalOrderInfo)\\b"
-		  }
-		]
 	  }
 	},
 	"scopeName": "source.moc"
+
   }
