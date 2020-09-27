@@ -1,107 +1,118 @@
 {
-  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "Etal",
-  "patterns": [
-    {
-      "include": "#keywords"
-    },
-    {
-      "include": "#strings"
-    },
-    {
-      "include": "#paren-expression"
-    },
-    {
-      "include": "#comments"
-    },
-    {
-      "include": "#constants"
-    },
-    {
-      "include": "#icrfunctions"
-    },
-    {
-      "include": "#storage"
-    }
-  ],
-  "repository": {
-    "keywords": {
-      "patterns": [
-        {
-          "name": "keyword.control.etal",
-          "match": "\\b(if|while|for|return|break)\\b"
-        },
-        {
-          "name": "keyword.other.etal",
-          "match": "\\b(print)\\b"
-        }
-      ]
-    },
-    "strings": {
-      "name": "string.quoted.double.etal",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
-        {
-          "name": "constant.character.escape.etal",
-          "match": "\\\\."
-        }
-      ]
-    },
-    "paren-expression": {
-      "begin": "\\(",
-      "end": "\\)",
-      "beginCaptures": {
-        "0": { "name": "punctuation.paren.open.etal" }
-      },
-      "endCaptures": {
-        "0": { "name": "punctuation.paren.close.etal" }
-      },
-      "name": "expression.group",
-      "patterns": [{ "include": "#expression" }]
-    },
-    "comments": {
-      "patterns": [
-        {
-          "name": "comment.line.double-dash",
-          "begin": "//",
-          "end": "\n"
-        },
-        {
-          "name": "comment.block.etal",
-          "begin": "/\\*",
-          "end": "\\*/"
-        }
-      ]
-    },
-    "constants": {
-      "patterns": [
-        {
-          "name": "constant.language",
-          "match": "\\b(true|false)\\b"
-        }
-      ]
-    },
-    "icrfunctions": {
-      "patterns": [
-        {
-          "name": "support.function",
-          "match": "\\b(ICR_CreateFont|ICR_SetLocalUserData|ICR_Window_Enable|ICR_GetLocalUserData|ICR_MessageBox|ICR_SetFeature|ICR_GetSystemData)\\b"
-        }
-      ]
-    },
-    "storage": {
-      "patterns": [
-        {
-          "name": "storage.type.etal",
-          "match": "\\b(function)\\b"
-        },
-        {
-          "name": "variable.etal",
-          "match": "\\b(local)\\b"
-        }
-      ]
-    }
-  },
-  "scopeName": "source.moc"
-}
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Etal",
+	"patterns": [
+	  {
+		"include": "#keywords"
+	  },
+	  {
+		"include": "#strings"
+	  },
+	  {
+		"include": "#paren-expression"
+	  },
+	  {
+		"include": "#comments"
+	  },
+	  {
+		"include": "#constants"
+	  },
+	  {
+		"include": "#icrfunctions"
+	  },
+	  {
+		"include": "#storage"
+	  },
+	  {
+		"include": "#events"
+	  }
+	],
+	"repository": {
+	  "keywords": {
+		"patterns": [
+		  {
+			"name": "keyword.control.etal",
+			"match": "\\b(if|while|for|return|break)\\b"
+		  },
+		  {
+			"name": "keyword.other.etal",
+			"match": "\\b(print)\\b"
+		  }
+		]
+	  },
+	  "strings": {
+		"name": "string.quoted.double.etal",
+		"begin": "\"",
+		"end": "\"",
+		"patterns": [
+		  {
+			"name": "constant.character.escape.etal",
+			"match": "\\\\."
+		  }
+		]
+	  },
+	  "paren-expression": {
+		"begin": "\\(",
+		"end": "\\)",
+		"beginCaptures": {
+		  "0": { "name": "punctuation.paren.open.etal" }
+		},
+		"endCaptures": {
+		  "0": { "name": "punctuation.paren.close.etal" }
+		},
+		"name": "expression.group",
+		"patterns": [{ "include": "#expression" }]
+	  },
+	  "comments": {
+		"patterns": [
+		  {
+			"name": "comment.line.double-dash",
+			"begin": "//",
+			"end": "\n"
+		  },
+		  {
+			"name": "comment.block.etal",
+			"begin": "/\\*",
+			"end": "\\*/"
+		  }
+		]
+	  },
+	  "constants": {
+		"patterns": [
+		  {
+			"name": "constant.language",
+			"match": "\\b(true|false)\\b"
+		  }
+		]
+	  },
+	  "icrfunctions": {
+		"patterns": [
+		  {
+			"name": "support.function",
+			"match": "\\b(ICR_EnableDebugLog|ICR_MessageBox|ICR_GetNumberDialog|ICR_GetAlphaDialog|ICR_ListDialog|ICR_ListDialog_AddItem|ICR_KeyPress|ICR_Sound|ICR_GetInput|ICR_SetInput|ICR_SetInput_Message|ICR_SetStock|ICR_GetStock|ICR_Error|ICR_GetCurrentClerk|ICR_GetCurrentMode|ICR_GetPGMData|ICR_SetPGMData|ICR_GetClerkBuffer_Index|ICR_GetClerkBuffer_Item|ICR_JournalLine|ICR_JournalItem|ICR_SendToKeyboard|ICR_SetLocalUserData|ICR_GetLocalUserData|ICR_SetGlobalUserData|ICR_GetGlobalUserData|ICR_StealEvent|ICR_ReleaseEvent|ICR_RedrawWindow|ICR_GetFileSize|ICR_AdvertiseProgramSetting|ICR_AdvertiseProgramHeading|ICR_PurgeProgramSettings|ICR_AdvertiseProgramSubMenu|ICR_ProgramItem_SetDP|ICR_ProgramItem_SetReadOnly|ICR_SalesModeWindow_Add|ICR_Window_Enable|ICR_SetLanguageText|ICR_GetLanguageText|ICR_ProgramItem_SetOptionList|ICR_PurgeProgramOptionList|ICR_ProgramOptionList_Add|ICR_DrawBox|ICR_SetText_Colour|ICR_DrawText|ICR_SetText_HAlign|ICR_DrawFrame|ICR_GetSalesData|ICR_SetText_VAlign|ICR_SelectImage|ICR_DrawImage|ICR_SelectFont|ICR_DrawPixel|ICR_Image_SetTransparent|ICR_CreateFont|ICR_2ndDisplayWindow_Add|ICR_ProgramItem_SetAltType|ICR_StopTimer|ICR_StartTimer|ICR_GetWindowDimensions|ICR_LoadImage|ICR_OutputToDevice|ICR_GetSystemData|ICR_EndPrinting|ICR_DeviceStatus|ICR_GetText_Width|ICR_GetText_Height|ICR_AwaitFile|ICR_ReceiptItem|ICR_ReceiptLine|ICR_GetPLURecNumber|ICR_GetReceipt_Line|ICR_GetReceipt_Header|ICR_MailConfigure|ICR_MailSendSimple|ICR_MailAddRecipient|ICR_MailSetSubject|ICR_MailAddToMessageLine|ICR_MailAddAttachment|ICR_MailSend|ICR_RedrawScreen|ICR_InvalidateCachedLevel|ICR_UpdateCheckIndexFile|ICR_ProgramSendFile|ICR_ProgramReceiveFile|ICR_AdjustTotals|ICR_FTPConfigure|ICR_FTPUpload|ICR_FTPDownload|ICR_DataEntryDialog_AddItem|ICR_DataEntryDialog|ICR_PrintImage_DrawBox|ICR_PrintImage_DrawFrame|ICR_PrintImage_DrawPixel|ICR_PrintImage_DrawText|ICR_PrintImage_DrawImage|ICR_PrintImage_DrawQRCode|ICR_PrintImage_Print|ICR_PrintImage_Start|ICR_PrintImage_GetQRWidth|ICR_ToPassword|ICR_FromPassword|ICR_MailAddToMessage|ICR_PlayMacro|ICR_SelectItem|ICR_GetUTCTimeBias|ICR_DrawPie|ICR_FloodFill|ICR_GetPixel|ICR_GetCurrent3rdPartyCustomer|ICR_SetFeature|ICR_File_OpenPipe|ICR_SysProc|ICR_Web_Reset|ICR_Web_SetURL|ICR_Web_SetPostData|ICR_Web_Post|ICR_CreateHMAC|ICR_AdjustCustomer|ICR_SendSMS|ICR_SetNextDialogInput|ICR_SendRemoteMessage|ICR_Web_SetHeaderField|ICR_SetEtalSaleFlag|ICR_Web_Get|ICR_OutputLine|ICR_ShellExecute)\\b"
+		  }
+		]
+	  },
+	  "storage": {
+		"patterns": [
+		  {
+			"name": "storage.type.etal",
+			"match": "\\b(function)\\b"
+		  },
+		  {
+			"name": "variable.etal",
+			"match": "\\b(local)\\b"
+		  }
+		]
+	  },
+	  "events": {
+		"patterns": [
+		  {
+			"name": "events.type.etal",
+			"match": "\\b(AfterFinalise|OnReceiptRequired|OnEmailOutResult|AfterCustomerLogOn|OnKPDeviceRequested|OnCustomerExpired|AfterRegItemSelect|OnFTPResult|AfterFullSalesDataReset|ReportEvent|OnFile_ReadPipeResult|OnMixMatch|OnWebPostResult|BeforeFinalise|PreSaleFinalised|OnSMSOutResult|AfterExtCustomerLogOn|OnRemoteMessageReceived|InsertAdditionalOrderInfo)\\b"
+		  }
+		]
+	  }
+	},
+	"scopeName": "source.moc"
+  }
